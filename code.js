@@ -13,6 +13,5 @@ function divideAndConquerSum(a) {
       + divideAndConquerSum(a.slice(div, (2*div)))
       + divideAndConquerSum(a.slice((2*div)));
   }
-    
 }
 
