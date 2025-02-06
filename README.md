@@ -27,21 +27,25 @@ Describe your reasoning and the conclusion you've come to. Your reasoning is the
 most important part. Add your answer to this markdown file.
 
 The recursive part is will a sum because it's divided by 3 each recursive step. So we can find the pattern and turn that into the sum of the splitting and add n for the summing which will take n time. At the end of the recursive call.
-$$T(n) =
+```math
+T(n) =
 \begin{cases}
     3,  &\text{if $n < 3$} \\
-    T(n/3), &\text{if $n > 3$}
-\end{cases}$$
-$$T(n) = 3T(n/3) + n \\
-= 9T(n/9) + n \\
-= 28T(n/28) + n \\
+    T(n/3) + 3, &\text{if $n > 3$}
+\end{cases}
+```
+
+```math
+T(n) = 3T(n/3) + 3 \\
+= 3(3T(n/9)+1)+3 \\
+= 9T(n/9) + 6 \\
 ... \\
-= 3^i T(n/3^i)  + n 
-$$
+= 3^i T(n/3^i)  + 3i 
+```
 for $i = log_3 n$
-$$
-= n + log_3 n \in \Theta ( n + log_3 n)
-$$
+```math
+nT(1) + 3 lg n = n + 3 lg n \in \Theta (n)
+```
 
 I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.
 
